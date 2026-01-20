@@ -27,7 +27,7 @@ export default function PodcastGrid({
 
   return (
     <section
-      className={`py-20 relative bg-[#0a0a0b] transition-all duration-700 ${isFiltering ? "pt-32" : ""}`}
+      className={`py-20 relative bg-brand-bg transition-all duration-700 ${isFiltering ? "pt-32" : ""}`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="bg-white/2 backdrop-blur-3xl rounded-[3rem] p-8 sm:p-12 border border-white/5 shadow-2xl">
@@ -71,7 +71,7 @@ export default function PodcastGrid({
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0b] via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-linear-to-t from-brand-bg via-transparent to-transparent opacity-60" />
                   <button className="absolute bottom-6 right-6 w-14 h-14 flex items-center justify-center rounded-full bg-orange-600 text-white opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-xl shadow-orange-600/40">
                     <Play className="w-6 h-6 fill-current ml-1" />
                   </button>
