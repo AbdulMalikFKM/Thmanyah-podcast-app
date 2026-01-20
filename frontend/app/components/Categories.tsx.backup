@@ -1,0 +1,28 @@
+const categories = [
+  { name: "فنجان", slug: "fanjan" }, // Thmanyah specific
+  { name: "تكنولوجيا", slug: "tech" },
+  { name: "بزنس", slug: "business" },
+  { name: "جريمة", slug: "crime" },
+  { name: "تاريخ", slug: "history" },
+  { name: "سياسة", slug: "politics" },
+];
+
+export default function Categories({
+  onCategoryClick,
+}: {
+  onCategoryClick: (term: string) => void;
+}) {
+  return (
+    <div className="flex gap-2 overflow-x-auto pb-6 no-scrollbar py-4">
+      {categories.map((cat) => (
+        <button
+          key={cat.slug}
+          onClick={() => onCategoryClick(cat.name)} // This triggers the search
+          className="whitespace-nowrap px-6 py-2 rounded-full bg-gray-100 hover:bg-orange-50 hover:text-orange-600 border border-transparent hover:border-orange-200 transition-all text-sm font-medium"
+        >
+          {cat.name}
+        </button>
+      ))}
+    </div>
+  );
+}
