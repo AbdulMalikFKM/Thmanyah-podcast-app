@@ -18,14 +18,12 @@ import { PodcastsModule } from './podcasts/podcasts.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost', // e.g., localhost or Supabase link
-      port: 5432,
-      username: 'postgres',
-      password: '32147896',
-      database: 'thmanyah_db',
-      // entities: [Podcast],
-      autoLoadEntities: true, // This automatically finds the 'Entity' files we will create
-      synchronize: true, // PRO-TIP: Only for development! It creates the table automatically.
+      url: process.env.DATABASE_URL,
+      autoLoadEntities: true,
+      synchronize: true,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     }),
     TypeOrmModule.forFeature([Podcast]),
     PodcastsModule,
