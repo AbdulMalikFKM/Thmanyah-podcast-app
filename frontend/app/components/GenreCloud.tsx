@@ -29,7 +29,7 @@ interface GenreCloudProps {
 
 export default function GenreCloud({ onGenreSelect }: GenreCloudProps) {
   return (
-    <section className="py-20 relative overflow-hidden bg-[#0a0a0b]">
+    <section className="py-20 relative overflow-hidden bg-brand-bg">
       <div className="max-w-7xl mx-auto px-6 relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">

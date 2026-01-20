@@ -32,7 +32,7 @@ export default function TrendingHero({ podcasts }: TrendingHeroProps) {
   if (!podcasts || podcasts.length < 3) return null;
 
   return (
-    <section className="relative pt-28 pb-20 overflow-hidden bg-[#0a0a0b]">
+    <section className="relative pt-28 pb-20 overflow-hidden bg-brand-bg">
       {/* Background Aura */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-150 bg-orange-600/10 blur-[120px] rounded-full pointer-events-none" />
 
@@ -106,7 +106,7 @@ export default function TrendingHero({ podcasts }: TrendingHeroProps) {
                   {/* Information Overlay (Only on Center Card) */}
                   {isActive && (
                     <>
-                      <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0b] via-[#0a0a0b]/20 to-transparent" />
+                      <div className="absolute inset-0 bg-linear-to-t from-brand-bg via-brand-bg/20 to-transparent" />
 
                       {/* Rank Badge */}
                       <div className="absolute top-6 right-6 w-14 h-14 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/20 flex flex-col items-center justify-center shadow-2xl">

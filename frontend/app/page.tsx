@@ -61,7 +61,7 @@ export default function Home() {
   const isFiltering = hasSearched || selectedGenre;
 
   return (
-    <main className="bg-[#0a0a0b] min-h-screen">
+    <main className="bg-brand-bg min-h-screen">
       {isLoading ? (
         <MainSkeleton />
       ) : (

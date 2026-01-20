@@ -9,7 +9,7 @@ interface SearchBarProps {
 
 export default function SearchBar({ onSearch, onReset }: SearchBarProps) {
   return (
-    <header className="sticky top-0 z-60 w-full border-b border-white/5 bg-[#0a0a0b]/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-60 w-full border-b border-white/5 bg-brand-bg/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-8">
         {/* Logo Section */}
         <div onClick={onReset} className="shrink-0 cursor-pointer group">
@@ -44,12 +44,12 @@ export default function SearchBar({ onSearch, onReset }: SearchBarProps) {
           <Search className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-white/30 group-focus-within:text-orange-500 transition-colors" />
         </div>
 
-        {/* Right side Actions (Optional placeholder for 'Favorites' or 'Login') */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Right side Actions Favirote */}
+        {/* <div className="hidden md:flex items-center gap-4">
           <button className="text-sm font-medium text-white/60 hover:text-white transition-colors">
             المفضلة
           </button>
-        </div>
+        </div> */}
       </div>
     </header>
   );

@@ -8,7 +8,7 @@ export interface Episode {
 }
 
 export interface Podcast {
-  id?: number; // Optional because iTunes IDs come as collectionId
+  id?: number;
   collectionId: string;
   name: string;
   artist: string;

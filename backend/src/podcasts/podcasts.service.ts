@@ -51,7 +51,6 @@ export class PodcastsService {
 
     if (!podcast) {
       try {
-        // FIX: Added <iTunesResponse> to axios call
         const lookup = await axios.get<iTunesResponse>(
           `https://itunes.apple.com/lookup?id=${id}`,
         );
@@ -69,7 +68,6 @@ export class PodcastsService {
           episodeCount: res.trackCount || 0,
         });
       } catch {
-        // FIX: Removed unused 'error' variable
         throw new NotFoundException('Could not retrieve podcast metadata');
       }
     }
@@ -111,7 +109,6 @@ export class PodcastsService {
   }
 
   async getTrending() {
-    // FIX: Added <iTunesRSSFeed>
     const rssResponse = await axios.get<iTunesRSSFeed>(
       `https://itunes.apple.com/us/rss/toppodcasts/limit=10/json`,
     );
@@ -119,12 +116,10 @@ export class PodcastsService {
     const entries = rssResponse.data.feed.entry;
     const ids = entries.map((e) => e.id.attributes['im:id']).join(',');
 
-    // FIX: Added <iTunesResponse>
     const detailsResponse = await axios.get<iTunesResponse>(
       `https://itunes.apple.com/lookup?id=${ids}`,
     );
 
-    // FIX: Properly typed map return
     return entries.map((entry, index) => {
       const id = entry.id.attributes['im:id'];
       const detail = detailsResponse.data.results.find(

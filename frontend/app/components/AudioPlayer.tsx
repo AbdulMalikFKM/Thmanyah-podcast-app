@@ -1,6 +1,7 @@
 "use client";
 import { usePlayer } from "../context/PlayerContext";
 import { Play, Pause, SkipBack, SkipForward, Volume2 } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function AudioPlayer() {
@@ -55,9 +56,9 @@ export default function AudioPlayer() {
         </div>
 
         <div className="flex items-center justify-between gap-4">
-          {/* Episode Info (Right side in RTL) */}
+          {/* Episode Info */}
           <div className="flex items-center gap-4 w-1/3 flex-row-reverse text-right">
-            <img
+            <Image
               src={currentEpisode.image}
               alt=""
               className="w-12 h-12 rounded-lg object-cover"
@@ -102,7 +103,7 @@ export default function AudioPlayer() {
             </button>
           </div>
 
-          {/* Volume (Left side in RTL) */}
+          {/* Volume */}
           <div className="flex items-center justify-start gap-3 w-1/3 text-white/40">
             <Volume2 size={18} />
             <div className="w-24 h-1 bg-white/10 rounded-full overflow-hidden hidden md:block">

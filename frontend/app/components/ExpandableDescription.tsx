@@ -1,5 +1,4 @@
 "use client";
-// 1. Import useLayoutEffect
 import { useState, useRef, useLayoutEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -12,23 +11,19 @@ export default function ExpandableDescription({ text }: Props) {
   const [showButton, setShowButton] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // 2. Change useEffect to useLayoutEffect
   useLayoutEffect(() => {
     const checkHeight = () => {
       if (contentRef.current) {
-        // We check if the content is taller than 3 lines (approx 80-85px)
         const isTallEnough = contentRef.current.scrollHeight > 85;
         setShowButton(isTallEnough);
       }
     };
 
-    // Run the check
     checkHeight();
 
-    // Pro-Tip: Add a resize listener to handle window stretching
     window.addEventListener("resize", checkHeight);
     return () => window.removeEventListener("resize", checkHeight);
-  }, [text]); // Re-run if the text changes
+  }, [text]);
 
   return (
     <div className="flex flex-col items-start w-full group">

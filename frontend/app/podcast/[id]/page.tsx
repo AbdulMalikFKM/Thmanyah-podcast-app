@@ -28,7 +28,7 @@ export default function PodcastDetail() {
 
   const { playEpisode, currentEpisode, isPlaying } = usePlayer();
 
-  // 1. Filter Logic (Already in your code, now used below)
+  // 1. Filter Logic
   const filteredEpisodes =
     podcast?.episodes?.filter(
       (episode: Episode) =>
@@ -121,7 +121,7 @@ export default function PodcastDetail() {
         </div>
       </section>
 
-      {/* 🔍 Search Bar Section */}
+      {/* Search Bar Section */}
       <div className="max-w-5xl mx-auto px-6 mb-8">
         <div className="relative group">
           <Search
@@ -164,7 +164,6 @@ export default function PodcastDetail() {
                 key={index}
                 className="group flex flex-row-reverse items-start gap-6 p-6 rounded-2xl bg-white/3 border border-white/5 hover:border-orange-600/30 hover:bg-white/6 transition-all"
               >
-                {/* Play Button - flex-shrink-0 is crucial here */}
                 <button
                   onClick={() =>
                     playEpisode({
@@ -189,7 +188,7 @@ export default function PodcastDetail() {
                   )}
                 </button>
 
-                {/* Episode Details Container - min-w-0 prevents shrinking issues */}
+                {/* Episode Details Container */}
                 <div className="text-right flex-1 min-w-0">
                   <h4 className="font-bold text-lg mb-1 group-hover:text-orange-500 transition-colors truncate">
                     {episode.title}

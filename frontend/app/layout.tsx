@@ -7,7 +7,7 @@ import AudioPlayer from "./components/AudioPlayer";
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-ibm-plex", // Short and clean variable name
+  variable: "--font-ibm-plex",
   display: "swap",
 });
 
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   title: "Thmanyah Podcast Search",
   description: "Technical Assignment for Thmanyah",
   icons: {
-    icon: "/favicon.ico?v=2", // or "/logo.png" if you used a png
+    icon: "/favicon.ico?v=2",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png", // Optional: for iPhone home screen
+    apple: "/apple-touch-icon.png",
   },
 };
 
