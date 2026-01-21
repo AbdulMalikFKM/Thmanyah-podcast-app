@@ -18,6 +18,7 @@ import { Podcast, Episode } from "@/app/types/podcast";
 import { usePlayer } from "@/app/context/PlayerContext";
 import ExpandableDescription from "@/app/components/ExpandableDescription";
 import PodcastSkeleton from "@/app/components/PodcastSkeleton";
+import { API_URL } from "@/app/config/api";
 
 export default function PodcastDetail() {
   const { id } = useParams();
@@ -39,7 +40,7 @@ export default function PodcastDetail() {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/podcasts/${id}`);
+        const response = await fetch(`${API_URL}/podcasts/${id}`);
         const data = await response.json();
         setPodcast(data);
       } catch (error) {

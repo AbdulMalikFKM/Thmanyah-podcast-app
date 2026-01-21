@@ -6,6 +6,7 @@ import GenreCloud from "./components/GenreCloud";
 import PodcastGrid from "./components/PodcastGrid";
 import MainSkeleton from "./components/MainSkeleton";
 import { Podcast } from "./types/podcast";
+import { API_URL } from "./config/api";
 
 export default function Home() {
   const [podcasts, setPodcasts] = useState<Podcast[]>([]);
@@ -21,7 +22,7 @@ export default function Home() {
     setSelectedGenre(null);
     setDisplayLimit(9);
     try {
-      const response = await fetch("http://localhost:3001/podcasts/trending");
+      const response = await fetch(`${API_URL}/podcasts/trending`);
       const data = await response.json();
       setPodcasts(data);
     } catch (error) {
@@ -46,7 +47,7 @@ export default function Home() {
     setDisplayLimit(9);
     try {
       const response = await fetch(
-        `http://localhost:3001/podcasts/search?term=${encodeURIComponent(term)}`,
+        `${API_URL}/podcasts/search?term=${encodeURIComponent(term)}`,
       );
       const data = await response.json();
       setPodcasts(data);
